@@ -24,7 +24,7 @@ run_analysis <- function() {
   d_test <- merge_test[,c(1,2,grep("[Mm][Ee][Aa][Nn]|[Ss][Tt][Dd]", names(merge_test)))]
   
   ##Get activity labels
-  d_testmerge <- merge(d_test, d_activitylabels)
+  d_testmerge <- merge(d_activitylabels, d_test)
   
   ##Read train set, activity labels and subject
   ##Assign proper column names
@@ -44,13 +44,13 @@ run_analysis <- function() {
   d_train <- merge_train[,c(1,2,grep("[Mm][Ee][Aa][Nn]|[Ss][Tt][Dd]", names(merge_train)))]
   
   ##Get activity labels
-  d_trainmerge <- merge(d_train, d_activitylabels)
+  d_trainmerge <- merge(d_activitylabels, d_train)
   
   ##Combine test and train data set
   d_cleaneddata <- rbind(d_testmerge, d_trainmerge)
   write.table(d_cleaneddata, "cleaned_data.txt", row.names = FALSE)
   
   ##Create independent tidy data set with the average of each variable for each activity and each subject
-  d_avgdata <- aggregate(d_cleaneddata, by = list(subject_id=d_cleaneddata$subjectid, activity_id=d_cleaneddata$activityid), FUN = "mean")
+  d_avgdata <- aggregate(d_cleaneddata[, 4:ncol(d_cleaneddata)], by = list(activityid=d_cleaneddata$activityid, activityname=d_cleaneddata$activityname, subjectid=d_cleaneddata$subjectid), FUN = "mean")
   write.table(d_avgdata, "avg_data.txt", row.names = FALSE)
 }
