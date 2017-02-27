@@ -30,17 +30,14 @@ Below are the transformations of the raw data set:<br>
 Codebook:<br>
 1. Read features.txt data sets<br>
 2. Read activity_labels.txt data sets and name the columns as "activityid","activityname"<br>
-3. Read test set, activity labels and subject and assign proper column names. The test header names obtained from the features.txt<br>
+3. Read test set, activity labels and subject and assign proper column names. The test header names are obtained from the features.txt<br>
 4. Merge test set, activity labels and subject as one test dataset<br>
 5. Extracts only the measurements on the mean and standard deviation from the merged test data set<br>
 6. Get activity_labels.txt labels into the merged test data set<br>
-7. Read train set, activity labels and subject and assign proper column names. The train header names obtained from the features.txt<br>
+7. Read train set, activity labels and subject and assign proper column names. The train header names are obtained from the features.txt<br>
 8. Merge train set, activity labels and subject as one train dataset<br>
 9. Extracts only the measurements on the mean and standard deviation from the merged train data set<br>
 10. Get activity_labels.txt into the merged train data set<br>
 11. Combine test and train data set<br>
 12. Create independent tidy data set with the average of each variable for each activity and each subject<br>
 13. Write the average data into  "avg_data.txt"<br>
-
-Tidy average data variables:
-
