@@ -15,6 +15,6 @@ CODEBOOK.md     - Describes the variables of the tidied data set.<br>
 3. Download the run_analysis.R file into [your R working directory\UCI HAR Dataset\]
 4. Set your R working directory as [your R working directory\UCI HAR Dataset\]
 5. To run the analysis, source the run_analysis.R into your R environment and then call the function run_analysis()
-   source("run_analysis.R")
+   source("run_analysis.R") <br>
    run_analysis()
 6. The result table from the analysis will be written into  [your R working directory\UCI HAR Dataset\]. Two result tables will be created    as cleaned_data.txt and avg_data.txt
