@@ -2,7 +2,7 @@ run_analysis <- function() {
   ##Read features.txt data sets
   d_features <- read.table("features.txt")
   
-  ##Read features.txt data sets
+  ##Read activity_labels.txt data sets
   d_activitylabels <- read.table("activity_labels.txt")
   names(d_activitylabels) <- c("activityid","activityname")
 
